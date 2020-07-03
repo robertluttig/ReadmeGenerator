@@ -11,7 +11,10 @@ function renderHtml(data) {
       Contributing 
       guidelines
       Tests
-      Questions
+      [Questions](#question)
+
+      <!-- toc -->
+
 
   Installation: 
   ${data.installation}
@@ -26,11 +29,12 @@ function renderHtml(data) {
   Tests:
   ${data.tests}
 
-  Questions:
+  ## Questions:
   ${data.github}
   ${data.linkedin}
+  Contact Instructions:
   ${data.contactIns} 
-  
+
   WHEN I choose a license for my application from a list of options (inquirer checkbox?)
   THEN a badge for that license is added near the top of the README and a
   notice is added to the section of the README entitled License that explains
@@ -48,67 +52,67 @@ inquirer.prompt([
       message: "Read me name:",
       name: "name",
   },
-  {
-      type: "input",
-      message: "Project Name/Title:",
-      name: "projectName",
-  },
-  {
-      type: "input",
-      message: "Project description:",
-      name: "description",
-  },
-  {
-    type: "input",
-    message: "Installation:",
-    name: "installation",
-},
-{
-  type: "input",
-  message: "Usage:",
-  name: "usage",
-},
-{
-  type: "checkbox",
-  message: "What licenses did the project use?",
-  name: "license",
-  choices: [
-    "licenseOne", 
-    "licenseTwo", 
-    "licenseThree", 
-    "licenseFour"
-  ]
-},
-{
-  type: "input",
-  message: "Contributing:",
-  name: "contributing",
-},
-{
-  type: "input",
-  message: "Guidelines:",
-  name: "guidelines",
-},
-{
-  type: "input",
-  message: "Tests:",
-  name: "tests",
-},
-{
- type: "input",
-  message: "What is your linkedin username?",
-  name: "linkedin",
-},
-{
-  type: "input",
-  message: "What is your github username?",
-  name: "github",
-},
-{
-  type: "input",
-  message: "Contact Instructions?",
-  name: "contactIns",
-},
+//   {
+//       type: "input",
+//       message: "Project Name/Title:",
+//       name: "projectName",
+//   },
+//   {
+//       type: "input",
+//       message: "Project description:",
+//       name: "description",
+//   },
+//   {
+//     type: "input",
+//     message: "Installation:",
+//     name: "installation",
+// },
+// {
+//   type: "input",
+//   message: "Usage:",
+//   name: "usage",
+// },
+// {
+//   type: "checkbox",
+//   message: "What licenses did the project use?",
+//   name: "license",
+//   choices: [
+//     "licenseOne", 
+//     "licenseTwo", 
+//     "licenseThree", 
+//     "licenseFour"
+//   ]
+// },
+// {
+//   type: "input",
+//   message: "Contributing:",
+//   name: "contributing",
+// },
+// {
+//   type: "input",
+//   message: "Guidelines:",
+//   name: "guidelines",
+// },
+// {
+//   type: "input",
+//   message: "Tests:",
+//   name: "tests",
+// },
+// {
+//  type: "input",
+//   message: "What is your linkedin url? ",
+//   name: "linkedin",
+// },
+// {
+//   type: "input",
+//   message: "What is your github username url?",
+//   name: "github",
+// },
+// {
+//   type: "input",
+//   message: "Contact Instructions?",
+//   name: "contactIns",
+// },
 
 ]).then(function(data) {
   const info = renderHtml(data)
