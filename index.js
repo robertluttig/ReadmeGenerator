@@ -1,7 +1,9 @@
 function renderHtml(data) {
   const newReadMe =
-   `${data.name}
+   `${data.projectName}
+
   Description:
+  ${data.description}
   Table of Contents:
       Installation 
       Usage
@@ -10,16 +12,25 @@ function renderHtml(data) {
       guidelines
       Tests
       Questions
+
   Installation: 
+  ${data.installation}
   Usage:
+  ${data.usage}
   License: 
+  ${data.license}
   Contributing:
-  guidelines:
+  ${data.contributing}
+  Guidelines:
+  ${data.guidelines}
   Tests:
+  ${data.tests}
+
   Questions:
-      GitHub username
-      email address
-      contact instructions
+  ${data.github}
+  ${data.linkedin}
+  ${data.contactIns} 
+  
   WHEN I choose a license for my application from a list of options (inquirer checkbox?)
   THEN a badge for that license is added near the top of the README and a
   notice is added to the section of the README entitled License that explains
@@ -34,34 +45,71 @@ var fs = require('fs');
 inquirer.prompt([
   {
       type: "input",
-      message: "Project title name:",
+      message: "Read me name:",
       name: "name",
   },
-  // {
-  //     type: "input",
-  //     message: "What is your current location?",
-  //     name: "location",
-  // },
-  // {
-  //     type: "input",
-  //     message: "Tell us about yourself.",
-  //     name: "bio",
-  // },
-  // {
-  //     type: "input",
-  //     message: "What is your linkedin username?",
-  //     name: "linkedin",
-  // },
-  // {
-  //     type: "input",
-  //     message: "What is your github username?",
-  //     name: "github",
-  // },
-  // {
-  //     type: "input",
-  //     message: "what are your hobbies?",
-  //     name: "hobbies",
-  // },
+  {
+      type: "input",
+      message: "Project Name/Title:",
+      name: "projectName",
+  },
+  {
+      type: "input",
+      message: "Project description:",
+      name: "description",
+  },
+  {
+    type: "input",
+    message: "Installation:",
+    name: "installation",
+},
+{
+  type: "input",
+  message: "Usage:",
+  name: "usage",
+},
+{
+  type: "checkbox",
+  message: "What licenses did the project use?",
+  name: "license",
+  choices: [
+    "licenseOne", 
+    "licenseTwo", 
+    "licenseThree", 
+    "licenseFour"
+  ]
+},
+{
+  type: "input",
+  message: "Contributing:",
+  name: "contributing",
+},
+{
+  type: "input",
+  message: "Guidelines:",
+  name: "guidelines",
+},
+{
+  type: "input",
+  message: "Tests:",
+  name: "tests",
+},
+{
+ type: "input",
+  message: "What is your linkedin username?",
+  name: "linkedin",
+},
+{
+  type: "input",
+  message: "What is your github username?",
+  name: "github",
+},
+{
+  type: "input",
+  message: "Contact Instructions?",
+  name: "contactIns",
+},
+
 ]).then(function(data) {
   const info = renderHtml(data)
   var filename = data.name.toLowerCase().split(' ').join('') + ".md";
