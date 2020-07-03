@@ -1,2 +1,1 @@
-# ReadmeGenerator
-This is a good readme generator
+My Read me
