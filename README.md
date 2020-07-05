@@ -9,7 +9,7 @@ undefined
       Contributing 
       guidelines
       Tests
-      [Heading](#heading)
+      [Questions](#questions)
 
       <!-- toc -->
 
@@ -33,7 +33,7 @@ undefined
   
   undefined
 
-  ## Heading
+  ## Questions
   undefined
   undefined
   Contact Instructions:
