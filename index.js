@@ -58,6 +58,25 @@ function renderHtml(data) {
 
 var inquirer = require("inquirer");
 var fs = require('fs');
+
+const licenses = [
+  {
+    name: "MIT",
+    url: "https://opensource.org/licenses/MIT",
+    id: "MIT",
+  },
+  {
+    name: "GNU General Public version 3",
+    url: "https://opensource.org/licenses/GPL-3.0",
+    id: "GPL-3.0-only",
+  },
+  {
+    name: "No License",
+    url: "",
+    id: "NOLICENSE",
+  },
+];
+
 inquirer.prompt([
   {
       type: "input",
@@ -85,15 +104,10 @@ inquirer.prompt([
   name: "usage",
 },
 {
-  type: "checkbox",
-  message: "What licenses did the project use?",
-  name: "license",
-  choices: [
-    "licenseOne", 
-    "licenseTwo", 
-    "licenseThree", 
-    "licenseFour"
-  ]
+  type: "list",
+  message: "Choose a license:",
+  name: "licenseName",
+  choices: licenses.map((license) => license.name),
 },
 {
   type: "input",
